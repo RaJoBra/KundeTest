@@ -29,7 +29,7 @@
     <property name="os.name" value="Windows 10"/>
     <property name="classworlds.conf" value="C:\Zimmermann\Neuer Ordner\apache-maven-3.6.2\bin\..\bin\m2.conf"/>
     <property name="sun.jnu.encoding" value="Cp1252"/>
-    <property name="java.library.path" value="C:\Zimmermann\jdk\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Docker\Docker\Resources\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Zimmermann\jdk\bin;C:\Zimmermann\gradle\bin;C:\Zimmermann\mongodb\bin;C:\Zimmermann\kafka\bin\windows;C:\Zimmermann\Git\bin;C:\Users\rapha\Documents\commandLineTool;C:\Zimmermann\Git\cmd;C:\Zimmermann\Neuer Ordner\apache-maven-3.6.2\bin;C:\Users\rapha\AppData\Local\Microsoft\WindowsApps;;C:\Zimmermann\IntelliJ-IDEA\IntelliJ IDEA 2019.2.2\bin;;C:\Users\rapha\AppData\Local\Programs\Microsoft VS Code\bin;."/>
+    <property name="java.library.path" value="C:\Zimmermann\jdk\bin;C:\Windows\Sun\Java\bin;C:\Windows\system32;C:\Windows;C:\ProgramData\DockerDesktop\version-bin;C:\Program Files\Docker\Docker\Resources\bin;C:\Windows\system32;C:\Windows;C:\Windows\System32\Wbem;C:\Windows\System32\WindowsPowerShell\v1.0\;C:\Windows\System32\OpenSSH\;C:\Zimmermann\jdk\bin;C:\Zimmermann\gradle\bin;C:\Zimmermann\mongodb\bin;C:\Zimmermann\kafka\bin\windows;C:\Zimmermann\Git\bin;C:\Users\rapha\Documents\commandLineTool;C:\Zimmermann\Git\cmd;C:\Zimmermann\Neuer Ordner\apache-maven-3.6.2\bin;C:\Zimmermann\fabric8;C:\Users\rapha\AppData\Local\Microsoft\WindowsApps;;C:\Zimmermann\IntelliJ-IDEA\IntelliJ IDEA 2019.2.2\bin;;C:\Users\rapha\AppData\Local\Programs\Microsoft VS Code\bin;."/>
     <property name="maven.conf" value="C:\Zimmermann\Neuer Ordner\apache-maven-3.6.2\bin\../conf"/>
     <property name="jdk.debug" value="release"/>
     <property name="java.class.version" value="56.0"/>
@@ -45,7 +45,7 @@
     <property name="java.class.path" value="C:\Zimmermann\Neuer Ordner\apache-maven-3.6.2\bin\..\boot\plexus-classworlds-2.6.0.jar"/>
     <property name="java.vm.specification.version" value="12"/>
     <property name="sun.arch.data.model" value="64"/>
-    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher package"/>
+    <property name="sun.java.command" value="org.codehaus.plexus.classworlds.launcher.Launcher fabric8:deploy"/>
     <property name="java.home" value="C:\Zimmermann\jdk"/>
     <property name="user.language" value="de"/>
     <property name="java.specification.vendor" value="Oracle Corporation"/>

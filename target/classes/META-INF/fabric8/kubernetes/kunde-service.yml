@@ -1,0 +1,26 @@
+---
+apiVersion: v1
+kind: Service
+metadata:
+  annotations:
+    fabric8.io/git-commit: 0e13b5a520dcd47480a8cd9c941d827148b0db27
+    fabric8.io/git-branch: master
+    fabric8.io/git-url: https://github.com/RaJoBra/KundeTest.git
+    prometheus.io/port: "9779"
+    prometheus.io/scrape: "true"
+  labels:
+    app: kunde
+    provider: fabric8
+    version: "1.0"
+    group: de.hska
+  name: kunde
+spec:
+  ports:
+  - name: pcsync-http
+    port: 8444
+    protocol: TCP
+    targetPort: 8444
+  selector:
+    app: kunde
+    provider: fabric8
+    group: de.hska

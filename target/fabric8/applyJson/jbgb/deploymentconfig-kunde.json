@@ -1,0 +1,136 @@
+{
+  "apiVersion" : "apps.openshift.io/v1",
+  "kind" : "DeploymentConfig",
+  "metadata" : {
+    "annotations" : {
+      "fabric8.io/git-branch" : "master",
+      "fabric8.io/git-commit" : "0e13b5a520dcd47480a8cd9c941d827148b0db27",
+      "fabric8.io/git-url" : "https://github.com/RaJoBra/KundeTest.git"
+    },
+    "creationTimestamp" : "2019-09-24T09:41:53Z",
+    "generation" : 1,
+    "labels" : {
+      "app" : "kunde",
+      "group" : "de.hska",
+      "provider" : "fabric8",
+      "version" : "1.0"
+    },
+    "name" : "kunde",
+    "namespace" : "jbgb",
+    "resourceVersion" : "27697641",
+    "selfLink" : "/apis/apps.openshift.io/v1/namespaces/jbgb/deploymentconfigs/kunde",
+    "uid" : "8a2ed1f1-deaf-11e9-8462-0a580a81014b"
+  },
+  "spec" : {
+    "replicas" : 1,
+    "revisionHistoryLimit" : 2,
+    "selector" : {
+      "app" : "kunde",
+      "group" : "de.hska",
+      "provider" : "fabric8"
+    },
+    "strategy" : {
+      "activeDeadlineSeconds" : 21600,
+      "resources" : { },
+      "rollingParams" : {
+        "intervalSeconds" : 1,
+        "maxSurge" : "25%",
+        "maxUnavailable" : "25%",
+        "timeoutSeconds" : 3600,
+        "updatePeriodSeconds" : 1
+      },
+      "type" : "Rolling"
+    },
+    "template" : {
+      "metadata" : {
+        "annotations" : {
+          "fabric8.io/git-branch" : "master",
+          "fabric8.io/git-commit" : "0e13b5a520dcd47480a8cd9c941d827148b0db27",
+          "fabric8.io/git-url" : "https://github.com/RaJoBra/KundeTest.git"
+        },
+        "labels" : {
+          "app" : "kunde",
+          "group" : "de.hska",
+          "provider" : "fabric8",
+          "version" : "1.0"
+        }
+      },
+      "spec" : {
+        "containers" : [ {
+          "env" : [ {
+            "name" : "KUBERNETES_NAMESPACE",
+            "valueFrom" : {
+              "fieldRef" : {
+                "apiVersion" : "v1",
+                "fieldPath" : "metadata.namespace"
+              }
+            }
+          } ],
+          "image" : "hska/kunde:1.0",
+          "imagePullPolicy" : "IfNotPresent",
+          "livenessProbe" : {
+            "failureThreshold" : 3,
+            "httpGet" : {
+              "path" : "/actuator/health",
+              "port" : 8444,
+              "scheme" : "HTTP"
+            },
+            "initialDelaySeconds" : 180,
+            "periodSeconds" : 10,
+            "successThreshold" : 1,
+            "timeoutSeconds" : 1
+          },
+          "name" : "spring-boot",
+          "ports" : [ {
+            "containerPort" : 8444,
+            "name" : "pcsync-http",
+            "protocol" : "TCP"
+          }, {
+            "containerPort" : 9779,
+            "name" : "prometheus",
+            "protocol" : "TCP"
+          }, {
+            "containerPort" : 8778,
+            "name" : "jolokia",
+            "protocol" : "TCP"
+          } ],
+          "readinessProbe" : {
+            "failureThreshold" : 3,
+            "httpGet" : {
+              "path" : "/actuator/health",
+              "port" : 8444,
+              "scheme" : "HTTP"
+            },
+            "initialDelaySeconds" : 10,
+            "periodSeconds" : 10,
+            "successThreshold" : 1,
+            "timeoutSeconds" : 1
+          },
+          "resources" : { },
+          "securityContext" : {
+            "privileged" : false
+          },
+          "terminationMessagePath" : "/dev/termination-log",
+          "terminationMessagePolicy" : "File"
+        } ],
+        "dnsPolicy" : "ClusterFirst",
+        "restartPolicy" : "Always",
+        "schedulerName" : "default-scheduler",
+        "securityContext" : { },
+        "terminationGracePeriodSeconds" : 30
+      }
+    },
+    "test" : false,
+    "triggers" : [ {
+      "type" : "ConfigChange"
+    } ]
+  },
+  "status" : {
+    "availableReplicas" : 0,
+    "latestVersion" : 0,
+    "observedGeneration" : 0,
+    "replicas" : 0,
+    "unavailableReplicas" : 0,
+    "updatedReplicas" : 0
+  }
+}
